@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ar" dir="auto">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تعديل الصور</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1 id="app-title">تعديل الصور</h1>
+    <input type="file" id="upload" accept="image/*">
+
+    <div class="canvas-container">
+        <canvas id="canvas" willReadFrequently="true"></canvas>
+        <canvas id="cropCanvas" willReadFrequently="true"></canvas>
+    </div>
+
+    <div class="controls">
+        <label id="brightness-label">السطوع: <input type="range" id="brightness" min="0" max="200" value="100"></label>
+        <label id="contrast-label">التباين: <input type="range" id="contrast" min="0" max="200" value="100"></label>
+        <label id="saturation-label">التشبع: <input type="range" id="saturation" min="0" max="200" value="100"></label>
+        <label id="hue-label">درجة اللون: <input type="range" id="hue" min="0" max="360" value="0"></label>
+    </div>
+
+    <div class="buttons">
+        <button onclick="applyFilter('grayscale')" id="grayscale-btn">أبيض وأسود</button>
+        <button onclick="applyFilter('invert')" id="invert-btn">عكس الألوان</button>
+        <button onclick="rotateImage()" id="rotate-btn">تدوير</button>
+        <button onclick="startManualCrop()" id="crop-btn">بدء القص اليدوي</button>
+        <button onclick="downloadImage()" id="download-btn">تحميل الصورة</button>
+    </div>
+
+    <script src="scripts.js"></script>
+</body>
+</html>
